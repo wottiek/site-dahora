@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montar PC - Verificar Compatibilidade</title>
+    <link rel="stylesheet" href="semem.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Montar PC - Verificar Compatibilidade</h1>
+
+        <div class="select-container">
+            <label for="processador">Escolha o processador:</label>
+            <select id="processador" name="processador">
+                <option value="intel_i7">Intel i7</option>
+                <option value="intel_i9">Intel i9</option>
+                <option value="intel_i5">Intel i5</option>
+                <option value="amd_ryzen_7">AMD Ryzen 7</option>
+                <option value="amd_ryzen_5">AMD Ryzen 5</option>
+                <option value="amd_ryzen_9">AMD Ryzen 9</option>
+                <option value="intel_xeon">Intel Xeon</option>
+                <option value="amd_epyc">AMD EPYC</option>
+            </select>
+        </div>
+
+        <div class="select-container">
+            <label for="placa_mae">Escolha a placa-mãe:</label>
+            <select id="placa_mae" name="placa_mae">
+                <option value="intel_z490">Intel Z490</option>
+                <option value="intel_z590">Intel Z590</option>
+                <option value="intel_b460">Intel B460</option>
+                <option value="intel_x299">Intel X299</option>
+                <option value="amd_b550">AMD B550</option>
+                <option value="amd_b450">AMD B450</option>
+                <option value="amd_x570">AMD X570</option>
+                <option value="amd_x399">AMD X399</option>
+            </select>
+        </div>
+
+        <div class="select-container">
+            <label for="memoria_ram">Escolha a memória RAM:</label>
+            <select id="memoria_ram" name="memoria_ram">
+                <option value="8gb_2400">8GB 2400MHz</option>
+                <option value="16gb_2666">16GB 2666MHz</option>
+                <option value="16gb_3200">16GB 3200MHz</option>
+                <option value="32gb_3600">32GB 3600MHz</option>
+                <option value="64gb_3200">64GB 3200MHz</option>
+                <option value="32gb_4000">32GB 4000MHz</option>
+                <option value="64gb_3600">64GB 3600MHz</option>
+                <option value="128gb_3200">128GB 3200MHz</option>
+            </select>
+        </div>
+
+        <div class="select-container">
+            <label for="placa_video">Escolha a placa de vídeo:</label>
+            <select id="placa_video" name="placa_video">
+                <option value="nvidia_gtx_1660">NVIDIA GTX 1660</option>
+                <option value="nvidia_rtx_3070">NVIDIA RTX 3070</option>
+                <option value="nvidia_rtx_3080">NVIDIA RTX 3080</option>
+                <option value="nvidia_rtx_3090">NVIDIA RTX 3090</option>
+                <option value="amd_rx_5700">AMD RX 5700</option>
+                <option value="amd_rx_6900">AMD RX 6900</option>
+                <option value="nvidia_gtx_1050ti">NVIDIA GTX 1050 Ti</option>
+                <option value="nvidia_titan_rtx">NVIDIA TITAN RTX</option>
+                <option value="nvidia_quadro_rtx_5000">NVIDIA Quadro RTX 5000</option>
+            </select>
+        </div>
+
+        <div class="select-container">
+            <label for="fonte">Escolha a fonte de alimentação:</label>
+            <select id="fonte" name="fonte">
+                <option value="600w">600W</option>
+                <option value="750w">750W</option>
+                <option value="850w">850W</option>
+                <option value="1000w">1000W</option>
+                <option value="1200w">1200W</option>
+                <option value="1500w">1500W</option>
+                <option value="2000w">2000W</option>
+            </select>
+        </div>
+
+        <div class="botao-container">
+            <input type="submit" value="Verificar Compatibilidade" onclick="verificarCompatibilidade()">
+        </div>
+
+        <div class="compatibilidade" id="mensagem">
+            <!-- A mensagem será inserida aqui com JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        function verificarCompatibilidade() {
+            var processador = document.getElementById("processador").value;
+            var placaMae = document.getElementById("placa_mae").value;
+            var memoriaRam = document.getElementById("memoria_ram").value;
+            var placaVideo = document.getElementById("placa_video").value;
+            var fonte = document.getElementById("fonte").value;
+
+            var mensagem = document.getElementById("mensagem");
+            var erros = [];
+
+            // Verificando incompatibilidade entre processador e placa-mãe de marcas diferentes
+            if (processador.includes("intel") && placaMae.includes("amd")) {
+                erros.push("Processador Intel não é compatível com placas-mãe AMD.");
+            }
+
+            if (processador.includes("amd") && placaMae.includes("intel")) {
+                erros.push("Processador AMD não é compatível com placas-mãe Intel.");
+            }
+
+            // Verificando compatibilidade do processador com a placa-mãe
+            if (processador === "intel_i7" && placaMae !== "intel_z490" && placaMae !== "intel_z590") {
+                erros.push("Placa-mãe incompatível com o processador Intel i7.");
+            }
+
+            if (processador === "amd_ryzen_7" && placaMae !== "amd_b450" && placaMae !== "amd_b550" && placaMae !== "amd_x570") {
+                erros.push("Placa-mãe incompatível com o processador AMD Ryzen 7.");
+            }
+
+            if (processador === "intel_i9" && placaMae !== "intel_z590") {
+                erros.push("Placa-mãe incompatível com o processador Intel i9.");
+            }
+
+            if (processador === "amd_ryzen_5" && placaMae !== "amd_b450" && placaMae !== "amd_b550") {
+                erros.push("Placa-mãe incompatível com o processador AMD Ryzen 5.");
+            }
+
+            // Verificando compatibilidade da memória RAM com a placa-mãe e o processador
+            if ((memoriaRam === "64gb_3200" || memoriaRam === "64gb_3600") && (placaMae !== "intel_z590" && placaMae !== "amd_b550" && placaMae !== "amd_x570")) {
+                erros.push("Placa-mãe incompatível com a memória RAM escolhida.");
+            }
+
+            // Verificando compatibilidade da fonte com a memória RAM
+            if (memoriaRam === "64gb_3200" && (fonte !== "1000w" && fonte !== "1200w")) {
+                erros.push("Fonte incompatível com a memória RAM de 64GB 3200MHz.");
+            }
+
+            if (memoriaRam === "32gb_3600" && (fonte !== "850w" && fonte !== "1000w")) {
+                erros.push("Fonte incompatível com a memória RAM de 32GB 3600MHz.");
+            }
+
+            // Exibindo a mensagem final
+            if (erros.length > 0) {
+                var mensagemErro = "<p>Os seguintes erros foram encontrados:</p><ul>";
+                erros.forEach(function(erro) {
+                    mensagemErro += "<li style='color: red;'>" + erro + "</li>";
+                });
+                mensagemErro += "</ul>";
+                mensagem.innerHTML = mensagemErro;
+            } else {
+                mensagem.innerHTML = "<p>Todos os componentes são compatíveis! <span style='color: green;'>Compatibilidade Confirmada!</span></p>";
+            }
+        }
+    </script>
+
+</body>
+</html>

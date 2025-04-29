@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e2f;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #6a0dad;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+/* Container dos produtos */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Cartão de produto */
+.produto {
+  background-color: #2e2e3f;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.3s ease;
+
+  /* Adicionados para alinhar os botões */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 370px; /* Altura mínima para manter os cartões alinhados */
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+}
+
+.produto img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.produto h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2em;
+}
+
+.produto p {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 10px;
+
+  /* Permite que a descrição cresça para empurrar o botão para baixo */
+  flex-grow: 1;
+}
+
+.produto a {
+  display: inline-block;
+  background-color: #6a0dad;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.produto a:hover {
+  background-color: #551a8b;
+}
+
+/* Botão principal */
+.botao-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.botao-roxo {
+  background-color: #6a0dad;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.botao-roxo:hover {
+  background-color: #551a8b;
+}
+
+/* Título de seções */
+h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #6a0dad;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 50px;
+  font-size: 0.95em;
+}
+
+/* Página de detalhes do produto */
+.produto-detalhes {
+  max-width: 800px;
+  margin: 50px auto;
+  background-color: #2e2e3f;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.produto-detalhes img.imagem-grande {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.produto-detalhes p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+/* Estilo da seção de integrantes */
+.integrantes {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #2e2e3f;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.integrantes h3 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.integrantes ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px 20px;
+  text-align: left;
+}
+
+.integrantes li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 1.05em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.integrantes li::before {
+  content: "👤";
+  position: absolute;
+  left: 0;
+  top: 0;
+}

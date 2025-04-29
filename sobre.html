@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre Nós - TechStore</title>
+  <link rel="stylesheet" href="saibamais.css" />
+</head>
+<body>
+  <header>
+    <h1>NovaTech - Sobre Nós</h1>
+    <nav>
+      <a href="home2.html">Home</a>
+    </nav>
+  </header>
+
+  <section class="sobre-nos">
+    <h2>Quem Somos</h2>
+    <p>
+      Somos estudantes da turma de Tecnologia da Informação do Mundo SENAI. Este site é parte de um projeto onde exploramos os componentes de um computador e desenvolvemos habilidades em HTML, CSS e lógica de programação.
+    </p>
+
+    <div class="info-grupo">
+      <h3>Nosso Time</h3>
+      <div class="grid-integrantes">
+        <div class="membro" data-img="Carlos.jpg" onclick="mostrarFoto(event)">Carlos</div>
+        <div class="membro" data-img="Gustavo.jpg" onclick="mostrarFoto(event)">Gustavo</div>
+        <div class="membro" data-img="Bn.png" onclick="mostrarFoto(event)">Bruno</div>
+        <div class="membro" data-img="Kaua.jpg" onclick="mostrarFoto(event)">Kauã</div>
+        <div class="membro" data-img="Nicolas.jpg" onclick="mostrarFoto(event)">Nicolas</div>
+        <div class="membro" data-img="Azaffe.jpg" onclick="mostrarFoto(event)">Azaffe</div>
+        <div class="membro" data-img="Suelen.jpg" onclick="mostrarFoto(event)">Suelen</div>
+        <div class="membro" data-img="Manu.jpg" onclick="mostrarFoto(event)">Emanuelly</div>
+        <div class="membro" data-img="Gessica.jpg" onclick="mostrarFoto(event)">Gessica</div>
+        <div class="membro" data-img="Laura.jpg" onclick="mostrarFoto(event)">Laura</div>
+      </div>
+      <div class="imagem-preview" id="preview-container">
+        <img id="preview-img" src="" alt="Foto do membro" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NovaTech - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function mostrarFoto(event) {
+      const membro = event.target;
+      const imgSrc = membro.getAttribute('data-img');
+      const previewImg = document.getElementById('preview-img');
+
+      previewImg.src = imgSrc;
+      previewImg.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

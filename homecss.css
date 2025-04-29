@@ -1,0 +1,175 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo básico do body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e2f;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center; /* Centralizando o texto */
+}
+
+/* Cabeçalho */
+header {
+  background-color: #6a0dad;
+  padding: 30px 20px; /* Mais espaçamento para um visual mais limpo */
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 30px; /* Aumentei o espaçamento inferior */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8em; /* Tamanho do título maior para chamar mais atenção */
+  color: #fff;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em; /* Tamanho maior para facilitar leitura */
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+/* Seção inicial */
+.home-inicio {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.home-inicio h2 {
+  font-size: 2.5rem;
+  color: #BB86FC;
+  margin-bottom: 20px;
+}
+
+.home-inicio p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.home-inicio img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  display: block;
+  margin: 20px auto; /* Centralizando a imagem */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botão */
+.botao-container {
+  margin-top: 30px;
+}
+
+.botao-roxo {
+  background-color: #6a0dad;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.botao-roxo:hover {
+  background-color: #551a8b;
+}
+
+/* Rodapé */
+footer {
+  background-color: #6a0dad;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 50px;
+  font-size: 1rem;
+  color: white;
+}
+
+/* Seção de integrantes */
+.integrantes {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #2e2e3f;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.integrantes h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #BB86FC;
+  font-weight: bold;
+}
+
+.integrantes ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  text-align: left;
+}
+
+.integrantes li {
+  font-size: 1.1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  padding-left: 30px;
+}
+
+.integrantes li::before {
+  content: "👤";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Imagem de apresentação */
+.imagem-apresentacao {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de links dentro de parágrafos */
+a {
+  color: #BB86FC;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ccc;
+}
